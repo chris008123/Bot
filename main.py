@@ -7,6 +7,25 @@ Run this file to start the bot.
 import os
 import sys
 import logging
+from flask import Flask
+from threading import Thread
+from bot import bot
+from dotenv import load_dotenv
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+def run_server():
+    port = int(os.environ.get("PORT", 10000))  # Render sets PORT env variable
+    app.run(host="0.0.0.0", port=port)
+
+Thread(target=run_server).start()
+
+# Start your Discord bot
+bot.run(os.getenv("DISCORD_TOKEN"))
 
 # Configure logging
 logging.basicConfig(
