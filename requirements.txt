@@ -8,3 +8,4 @@ discord.py
 python-dotenv
 pbr
 flask
+PyNaCl
