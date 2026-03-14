@@ -10,7 +10,6 @@ import logging
 from flask import Flask
 from threading import Thread
 from bot import bot
-from dotenv import load_dotenv
 
 app = Flask('')
 
@@ -25,7 +24,7 @@ def run_server():
 Thread(target=run_server).start()
 
 # Start your Discord bot
-bot.run(os.getenv("DISCORD_TOKEN"))
+bot.run(os.environ['DISCORD_TOKEN'])
 
 # Configure logging
 logging.basicConfig(
