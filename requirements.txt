@@ -6,3 +6,4 @@ requests
 beautifulsoup4
 discord.py
 python-dotenv
+PYTHON_VERSION = 3.11.1
