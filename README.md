@@ -1,10 +1,10 @@
-# 🤖 Discord Code Quality Bot
+#Discord Code Quality Bot
 
 A production-ready Discord bot that evaluates members' code submissions and generates weekly quality-based rankings. **Ranking is based on code QUALITY, not activity.**
 
-## 📋 Features
+## Features
 
-✅ **Automated Code Analysis**
+ **Automated Code Analysis**
 - Syntax validation (AST)
 - PEP8 style checking (pylint)
 - Cyclomatic complexity analysis (radon)
@@ -12,35 +12,35 @@ A production-ready Discord bot that evaluates members' code submissions and gene
 - Documentation/comment coverage
 - Code duplication detection
 
-✅ **Transparent Scoring System (0-100)**
+ **Transparent Scoring System (0-100)**
 - Base score: 100 points
 - Deductions for syntax errors, style violations, complexity, missing docs, security issues
 - Bonuses for type hints, tests, good documentation
 - Clear feedback explaining each deduction/bonus
 
-✅ **Weekly Rankings**
+ **Weekly Rankings**
 - Automatically generated top 10 leaderboard
 - Admin users excluded from rankings (configurable)
 - Posted to announcements channel
 - Tracked in SQLite database
 
-✅ **Rule Monitoring**
+ **Rule Monitoring**
 - Detects banned words/phrases
 - Detects spam (excessive caps, repeated messages)
 - Reports violations to admin DM
 
-✅ **Multiple Submission Methods**
+ **Multiple Submission Methods**
 - Code file attachments (.py, .js, .java, etc.)
 - Code blocks in messages (```python...```)
 - Command-based submission
 
-✅ **User-Friendly Commands**
+ **User-Friendly Commands**
 - `/submit` - Submit code for analysis
 - `!mystats` - View your submission history
 - `!leaderboard` - View weekly rankings
 - `!feedback` - Get detailed analysis of submissions
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 disbot/
@@ -96,7 +96,7 @@ users
 └── created_at
 ```
 
-## 📊 Scoring Formula
+##  Scoring Formula
 
 ### Base Score: 100 points
 
@@ -119,13 +119,13 @@ users
 
 | Score | Rating | Meaning |
 |-------|--------|---------|
-| 90-100 | 🌟 Excellent | Production-ready code |
+| 90-100 |  Excellent | Production-ready code |
 | 75-89 | ✅ Great | Minor issues, generally solid |
 | 60-74 | 👍 Good | Acceptable, room for improvement |
 | 40-59 | ⚠️ Needs Work | Significant issues to address |
 | 0-39 | ❌ Major Issues | Requires substantial revision |
 
-## 🚀 Setup & Installation
+## Setup & Installation
 
 ### Prerequisites
 - Python 3.8+
@@ -211,7 +211,7 @@ Expected output:
 2024-12-21 12:00:02 - bot - INFO - Background tasks started successfully
 ```
 
-## 📝 Usage Examples
+##  Usage Examples
 
 ### User Commands
 
@@ -231,10 +231,10 @@ def hello_world():
 
 Response:
 ```
-✅ Code Analysis Complete
-📊 Score: 85/100 ✅ Great!
-💻 Language: Python
-❌ Issues Found: High cyclomatic complexity, Missing documentation
+ Code Analysis Complete
+ Score: 85/100  Great!
+ Language: Python
+ Issues Found: High cyclomatic complexity, Missing documentation
 ```
 
 #### View Your Stats
@@ -242,13 +242,13 @@ Response:
 !mystats
 
 Response:
-📊 Stats for JohnDoe
-📈 Statistics
+ Stats for JohnDoe
+ Statistics
 Total Submissions: 5
 Average Score: 82.4/100
 Latest Score: 88/100
 
-🕐 Recent Submissions
+ Recent Submissions
 • **88/100** - 2024-12-21 14:30 (python)
 • **80/100** - 2024-12-20 10:15 (python)
 ```
@@ -258,7 +258,7 @@ Latest Score: 88/100
 !leaderboard
 
 Response:
-🏆 Weekly Code Quality Leaderboard
+ Weekly Code Quality Leaderboard
 🥇 Alice - 92.5/100 (8 submissions)
 🥈 Bob - 87.3/100 (6 submissions)
 🥉 Charlie - 85.1/100 (5 submissions)
@@ -276,11 +276,11 @@ Syntax: Valid
 PEP8: {'convention': 2, 'refactor': 1, 'warning': 0, 'error': 0}
 Cyclomatic Complexity: 12
 
-❌ Deductions
+ Deductions
 • High cyclomatic complexity: 12 (-10 pts)
 • PEP8 violations: 3 issues found (-7 pts)
 
-✅ Bonuses
+ Bonuses
 • Good use of type hints: 50% (+5 pts)
 ```
 
@@ -317,8 +317,8 @@ Total Violations: 3
 !forceranking
 
 Response:
-⏳ Generating rankings...
-✅ Rankings generated! Top user: 123456789
+ Generating rankings...
+ Rankings generated! Top user: 123456789
 ```
 
 #### Admin Help
@@ -442,27 +442,27 @@ EXCLUDE_ADMINS_FROM_LEADERBOARD = True  # IMPORTANT
 
 ### Implemented Safeguards
 
-✅ **SQL Injection Prevention**
+ **SQL Injection Prevention**
 - Uses parameterized queries throughout
 - Database.py handles all SQL safely
 
-✅ **Timeout Protection**
+ **Timeout Protection**
 - Analysis has 30-second timeout (configurable)
 - Prevents hanging on malicious code
 
-✅ **Rate Limiting**
+ **Rate Limiting**
 - Submissions limited to 1 per 60 seconds per user
 - Prevents spam and abuse
 
-✅ **Size Limits**
+ **Size Limits**
 - Max 50KB code per submission (configurable)
 - Max 10MB file attachments
 
-✅ **Privilege Separation**
+ **Privilege Separation**
 - Admin commands check user ID against whitelist
 - Non-admins can't modify rankings or access violations
 
-✅ **Safe Error Handling**
+ **Safe Error Handling**
 - All exceptions caught and logged
 - No stack traces sent to users
 - Graceful degradation
@@ -496,7 +496,7 @@ EXCLUDE_ADMINS_FROM_LEADERBOARD = True  # IMPORTANT
    pip install --upgrade -r requirements.txt
    ```
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Bot Won't Start
 
@@ -556,7 +556,7 @@ sqlite3 discord_bot.db
 > .quit
 ```
 
-## 📈 Performance Tips
+##  Performance Tips
 
 ### Handle High Volume
 
@@ -589,7 +589,7 @@ sqlite3 discord_bot.db
    await asyncio.to_thread(analyzer.analyze, code, language)
    ```
 
-## 📚 Code Examples
+##  Code Examples
 
 ### Example 1: Excellent Code (Score ~95)
 
@@ -641,13 +641,13 @@ def test_fibonacci():
 ```
 
 **Score Breakdown:**
-- ✅ Valid syntax: 0 deductions
-- ✅ PEP8 compliant: 0 deductions
-- ✅ Low complexity (≤5): 0 deductions
-- ✅ 100% documented: 0 deductions
-- ✅ No security issues: 0 deductions
-- ✅ Type hints: +5
-- ✅ Tests included: +5
+-  Valid syntax: 0 deductions
+-  PEP8 compliant: 0 deductions
+-  Low complexity (≤5): 0 deductions
+-  100% documented: 0 deductions
+-  No security issues: 0 deductions
+-  Type hints: +5
+-  Tests included: +5
 - **Final: 100/100 → Clamped to 95**
 
 ### Example 2: Poor Code (Score ~35)
@@ -669,13 +669,13 @@ exec(f"result = fib({x})")  # SECURITY RISK!
 ```
 
 **Score Breakdown:**
-- ❌ PEP8 violations (no spaces, single-letter vars): -15
-- ❌ Undocumented: -15
-- ❌ Security risk (exec()): -15
-- ❌ No tests: 0 bonuses
+-  PEP8 violations (no spaces, single-letter vars): -15
+-  Undocumented: -15
+-  Security risk (exec()): -15
+-  No tests: 0 bonuses
 - **Final: 100 - 45 = 55 → Rounded to 35 with other minor issues**
 
-## 🚢 Production Deployment
+##  Production Deployment
 
 ### Using systemd (Linux)
 
@@ -740,7 +740,7 @@ To improve the bot:
 3. Extend database schema as needed
 4. Test thoroughly before deploying
 
-## ❓ FAQ
+##  FAQ
 
 **Q: Can I use this for multiple Discord servers?**
 A: Yes! The bot can be in multiple servers. Just invite it to more servers and configure channel IDs per server using roles or separate databases.
@@ -765,4 +765,4 @@ A: Yes, under MIT license. Just include license attribution.
 
 ---
 
-**Created with ❤️ for code quality-focused communities**
+**Created with  for code quality-focused communities**
